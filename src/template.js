@@ -87,8 +87,8 @@ module.exports = team => {
             <title>Team Profile Generator</title>
         </head>
         <body>
-            <header>
-            <h2> My Team </h2>
+            <header class="alert alert-primary" role="alert">
+            <h2 class="alert-heading"> My Team </h2>
             </header>
             <main> ${generateWebsite(team)} </main>
             
@@ -96,18 +96,4 @@ module.exports = team => {
         </html>
             `;
     }  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
