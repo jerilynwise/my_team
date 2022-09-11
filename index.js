@@ -256,7 +256,7 @@ const addIntern = () => {
 const done = () => {
     console.log(`
     ===================================
-      You have finished building
+        You have finished building
       the team! Go to your webpage now!
     ===================================
     `);
