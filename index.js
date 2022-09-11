@@ -251,6 +251,8 @@ const addIntern = () => {
     })
 };
 
+
+
 // when done is selected the questions are finished and the info is pushed into the output directory- tutotr helped me create this
 
 const done = () => {
@@ -265,7 +267,7 @@ const done = () => {
     if (!fs.existsSync(OUTPUT_DIR)) {
         fs.mkdirSync(OUTPUT_DIR)
     }
-    fs.writeFileSync(outputPath, generateSite(teamMembers), "utf-8");
+    fs.writeFileSync(outputPath, generateSite(team), "utf-8");
 }
 
 
