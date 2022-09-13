@@ -5,6 +5,9 @@ AS A manager I WANT to generate a webpage that displays my team's basic info</br
 SO THAT I have quick access to their emails and GitHub profiles</br>
   
 
+![image](https://user-images.githubusercontent.com/102970872/189781050-d8485be7-6ba4-4185-a93c-f7bfef4c0abe.png)</br>
+![image](https://user-images.githubusercontent.com/102970872/189781078-e3679271-7591-405d-ba35-d5a9cf87bb7a.png)</br>
+
 
 
 
