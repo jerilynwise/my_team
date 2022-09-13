@@ -5,16 +5,16 @@ const generateWebsite = (team) => {
 
     // make the html template for manager
     const addManager = manager => {
-        console.log(manager);
+        console.log('manager', manager);
         let managerCard = `
-        <div class="card text-white bg-success mb-3" style="width: 18rem;">
+        <div class="card text-black bg-success mb-3" style="width: 18rem;">
             <div class="card-header">
-           ${manager.name} <br/>
+           ${manager.getName()} <br/>
            <i class="fa-solid fa-user-tie"></i>Manager</div>
            <ul class="list-group list-group-flush">
-            <li class="list-group-item">ID: ${manager.id}</li>
-            <li class="list-group-item">Email: <span id="email"><a href="mailto:${manager.email}">${manager.email}</a></span></li>
-            <li class="list-group-item">Office Number: ${manager.officeNumber}</li>
+            <li class="list-group-item">ID: ${manager.getId()}</li>
+            <li class="list-group-item">Email: <span id="email"><a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></span></li>
+            <li class="list-group-item">Office Number: ${manager.getOfficeNumber()}</li>
             </ul>
         </div>
         `;
@@ -26,14 +26,14 @@ const generateWebsite = (team) => {
     const addEngineer = engineer => {
         console.log(engineer);
         let engineerCard = ` 
-        <div class="card text-white bg-primary mb-3" style="width: 18rem;">
+        <div class="card text-black bg-primary mb-3" style="width: 18rem;">
             <div class="card-header">
-        ${engineer.name} <br/>
+        ${engineer.getName()} <br/>
         <i class="fa-solid fa-gear"></i></i>Engineer</div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">ID: ${engineer.id}</li>
-            <li class="list-group-item">Email: <span id="email"><a href="mailto:${engineer.email}">${engineer.email}</a></span></li>
-            <li class="list-group-item">Github Username: <a target="_blank" href="https://github.com/${engineer.github}">${engineer.github}</a></li>
+            <li class="list-group-item">ID: ${engineer.getId()}</li>
+            <li class="list-group-item">Email: <span id="email"><a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></span></li>
+            <li class="list-group-item">Github Username: <a target="_blank" href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></li>
             </ul>
         </div>
         `;
@@ -43,14 +43,14 @@ const generateWebsite = (team) => {
     const addIntern = intern => {
         console.log(intern);
         let internCard = ` 
-        <div class="card text-white bg-warning mb-3" style="width: 18rem;">
+        <div class="card text-black bg-warning mb-3" style="width: 18rem;">
             <div class="card-header">
-           ${intern.name} <br/>
+           ${intern.getName()} <br/>
            <i class="fa-solid fa-user-pen"></i></i>Intern</div>
            <ul class="list-group list-group-flush">
-            <li class="list-group-item">ID: ${intern.id}</li>
-            <li class="list-group-item">Email: <span id="email"><a href="mailto:${intern.email}">${intern.email}</a></span></li>
-            <li class="list-group-item">School: ${intern.school}</li>
+            <li class="list-group-item">ID: ${intern.getId()}</li>
+            <li class="list-group-item">Email: <span id="email"><a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></span></li>
+            <li class="list-group-item">School: ${intern.getSchool()}</li>
             </ul>
         </div>
         `;
@@ -70,6 +70,9 @@ const generateWebsite = (team) => {
                 addIntern(team[i]);
             }
         }
+
+        return website;
+    }
           // export function to generate entire page
 module.exports = team => {
 
@@ -83,17 +86,16 @@ module.exports = team => {
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
                 integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
                 <script src="https://kit.fontawesome.com/319c4f69f5.js" crossorigin="anonymous"></script>
-            <link rel="stylesheet" href="../dist/style.css" />
+            <link rel="stylesheet" href="../output/style.css" />
             <title>Team Profile Generator</title>
         </head>
         <body>
             <header class="alert alert-primary" role="alert">
             <h2 class="alert-heading"> My Team </h2>
             </header>
-            <main> ${generateWebsite(team)} </main>
+            <main class= "d-inline-flex"> ${generateWebsite(team)} </main>
             
         </body>
         </html>
             `;
     }  
-}

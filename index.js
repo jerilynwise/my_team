@@ -5,7 +5,7 @@ const Intern = require('./lib/Intern')
 const Engineer = require('./lib/Engineer')
 const fs = require('fs')
 const path = require('path');
-const generateSite = require('./src/template');
+const generateSite = require('./src/template')
 const OUTPUT_DIR = path.resolve(__dirname, "output")
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 const team = [];
@@ -77,7 +77,9 @@ const addManager = () => {
                 to the team!
         ===========================
         `);
+        
         const manager = new Manager(response.name, response.id, response.email, response.officeNumber);
+        console.log('officeNumber', manager.officeNumber)
         team.push(manager);
         nextEmployee();
     })
@@ -267,7 +269,7 @@ const done = () => {
     if (!fs.existsSync(OUTPUT_DIR)) {
         fs.mkdirSync(OUTPUT_DIR)
     }
-    fs.writeFileSync(outputPath, generateSite(team), "utf-8");
+    fs.writeFileSync(path.join(__dirname, '/output/team.html'), generateSite(team), "utf-8");
 }
 
 
